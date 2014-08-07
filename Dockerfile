@@ -5,12 +5,10 @@ RUN apt-get update && apt-get upgrade -y
 RUN apt-get install git python build-essential wget screen tmux curl -y
 
 RUN mkdir /Development
-RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.13.0/install.sh | bash
+RUN cd /Development && git clone git://github.com/joyent/node && git checkout stable
 
-CMD source ~/.profile
-
-RUN nvm install 0.10.30
-
+RUN cd /Development/node && ./configure && make && make install
+RUN rm -rf /Development/node
 RUN chmod 777 -R /Development
 
 RUN npm install -g bower grunt-cli yo codebox
