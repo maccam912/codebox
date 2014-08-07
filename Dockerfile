@@ -15,8 +15,6 @@ RUN npm install -g bower grunt-cli yo codebox
 
 RUN curl https://j.mp/spf13-vim3 -L > spf13-vim.sh && sh spf13-vim.sh
 
-RUN codebox --root=/Development --open
-
 EXPOSE 80:80
 EXPOSE 443:443
 EXPOSE 3000:3000
