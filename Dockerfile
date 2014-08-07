@@ -7,7 +7,7 @@ RUN apt-get install git python build-essential wget screen tmux curl -y
 RUN mkdir /Development
 RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.13.0/install.sh | bash
 
-#RUN source ~/.profile
+# source ~/.profile
 RUN nvm install 0.10.30
 
 RUN chmod 777 -R /Development
